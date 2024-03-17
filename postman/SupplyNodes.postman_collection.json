@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "7084f58f-2a9c-4f4c-b909-8c22ff1bee5f",
+		"name": "SupplyNodes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28417044"
+	},
+	"item": [
+		{
+			"name": "Nodes List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwNjgzMTIxLCJpYXQiOjE3MTA2Nzk1MjEsImp0aSI6IjZkYjcwMzJiZWM5NTRjN2M4NWMyODcwZmM1ZGU2ZTQ1IiwidXNlcl9pZCI6MX0.PKrQ2jV4_tZaKVBv85hcoEvFsG3sS1sGV5gdyV_nh-Y",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/node/"
+			},
+			"response": []
+		},
+		{
+			"name": "Node List with Country Filter",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwNjc5NDIyLCJpYXQiOjE3MTA2NzU4MjIsImp0aSI6IjllYWYxNTBhMmYzMzQwYTE5YTBmM2UzNTJhNDc0ZjU0IiwidXNlcl9pZCI6MX0.Cs5ExSWLP3MyCfa7x6U3l3McCIJSE09u-tigI0t8x1Q",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/node/?country=Russia",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"node",
+						""
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "Russia"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Node Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwNjc5NDIyLCJpYXQiOjE3MTA2NzU4MjIsImp0aSI6IjllYWYxNTBhMmYzMzQwYTE5YTBmM2UzNTJhNDc0ZjU0IiwidXNlcl9pZCI6MX0.Cs5ExSWLP3MyCfa7x6U3l3McCIJSE09u-tigI0t8x1Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Ivan Petrov\",\n    \"category\": \"ENT\",\n    \"products\": [1, 3],\n    \"supplier_tier\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/node/create/"
+			},
+			"response": []
+		},
+		{
+			"name": "Node Retrieve",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwNjgzMTIxLCJpYXQiOjE3MTA2Nzk1MjEsImp0aSI6IjZkYjcwMzJiZWM5NTRjN2M4NWMyODcwZmM1ZGU2ZTQ1IiwidXNlcl9pZCI6MX0.PKrQ2jV4_tZaKVBv85hcoEvFsG3sS1sGV5gdyV_nh-Y",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/node/view/6/"
+			},
+			"response": []
+		},
+		{
+			"name": "Node Update",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwNjc1MTY5LCJpYXQiOjE3MTA2NzE1NjksImp0aSI6Ijc4NzcyZWM3M2I4YjRmY2NhYWFmN2VkOWU3ODc5YTYzIiwidXNlcl9pZCI6MX0.N3Of1EwRrZtVX-dLObkpKwvIlYTatPN4UVOi12SAoWM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"products\": [1, 3, 5]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/node/update/2/"
+			},
+			"response": []
+		},
+		{
+			"name": "Node Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwNjY1MjgzLCJpYXQiOjE3MTA2NjE2ODMsImp0aSI6IjllZDAxZDY5YmI4YTRmZTRiZWVlYmM4YWZjOWNjZWY2IiwidXNlcl9pZCI6MX0.JaMmxQHXNfDseqeFjucDb30U_I6M4QeN2SHGEAzATH0",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/node/delete/4/"
+			},
+			"response": []
+		}
+	]
+}
