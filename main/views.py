@@ -1,4 +1,6 @@
-from rest_framework import viewsets, serializers
+import django_filters
+from rest_framework import viewsets
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.generics import CreateAPIView, UpdateAPIView, RetrieveAPIView, ListAPIView, DestroyAPIView
 
 from main.models import Product, SupplyNode, Contact
@@ -40,10 +42,21 @@ class SupplyNodeViewAPIView(RetrieveAPIView):
     permission_classes = [IsActive]
 
 
+class SupplyNodeFilter(django_filters.FilterSet):
+
+    country = django_filters.CharFilter(field_name='contact__country', lookup_expr='exact')
+
+    class Meta:
+        model = SupplyNode
+        fields = ['country']
+
+
 class SupplyNodeListAPIView(ListAPIView):
     serializer_class = SupplyNodeListViewSerializer
     queryset = SupplyNode.objects.all()
     permission_classes = [IsActive]
+    filter_backends = [DjangoFilterBackend]
+    filterset_class = SupplyNodeFilter
 
 
 class SupplyNodeUpdateAPIView(UpdateAPIView):

@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "0821090f-1642-47b8-a6b8-ceb1a077f963",
+		"name": "Contacts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28417044"
+	},
+	"item": [
+		{
+			"name": "Contacts List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwNjY1MjgzLCJpYXQiOjE3MTA2NjE2ODMsImp0aSI6IjllZDAxZDY5YmI4YTRmZTRiZWVlYmM4YWZjOWNjZWY2IiwidXNlcl9pZCI6MX0.JaMmxQHXNfDseqeFjucDb30U_I6M4QeN2SHGEAzATH0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/contact/"
+			},
+			"response": []
+		},
+		{
+			"name": "Contact Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwNjgzMTIxLCJpYXQiOjE3MTA2Nzk1MjEsImp0aSI6IjZkYjcwMzJiZWM5NTRjN2M4NWMyODcwZmM1ZGU2ZTQ1IiwidXNlcl9pZCI6MX0.PKrQ2jV4_tZaKVBv85hcoEvFsG3sS1sGV5gdyV_nh-Y",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"ivan.petrov@gmail.com\",\n    \"country\": \"Russia\",\n    \"city\": \"Москва\",\n    \"street\": \"Ленинский пр.\",\n    \"building_number\": \"67, кв. 1\",\n    \"supply_node\": 6\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/contact/"
+			},
+			"response": []
+		},
+		{
+			"name": "Contact Retrieve",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwNjY1MjgzLCJpYXQiOjE3MTA2NjE2ODMsImp0aSI6IjllZDAxZDY5YmI4YTRmZTRiZWVlYmM4YWZjOWNjZWY2IiwidXNlcl9pZCI6MX0.JaMmxQHXNfDseqeFjucDb30U_I6M4QeN2SHGEAzATH0",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/contact/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "Contact Update",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwNjc1MTY5LCJpYXQiOjE3MTA2NzE1NjksImp0aSI6Ijc4NzcyZWM3M2I4YjRmY2NhYWFmN2VkOWU3ODc5YTYzIiwidXNlcl9pZCI6MX0.N3Of1EwRrZtVX-dLObkpKwvIlYTatPN4UVOi12SAoWM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"city\": \"Beijing\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/contact/6/"
+			},
+			"response": []
+		},
+		{
+			"name": "Contact Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwNDk4ODk5LCJpYXQiOjE3MTA0OTUyOTksImp0aSI6ImI4YWE2OWIwNWZiZTQ2NzFiZTE5NjdjYjgyM2M3ZjcwIiwidXNlcl9pZCI6MX0.P-EZvpGUkk7qJ6OdoAm_lUwg9kXz-K_Cwn-nsNUJyYU",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/contact/17/"
+			},
+			"response": []
+		}
+	]
+}

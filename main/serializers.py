@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from main.models import Product, SupplyNode, Contact
+from main.validators import SupplyNodeValidator
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -28,6 +29,7 @@ class ContactListDetailSerializer(serializers.ModelSerializer):
 
 
 class SupplyNodeSerializer(serializers.ModelSerializer):
+    validators = [SupplyNodeValidator(),]
 
     class Meta:
         model = SupplyNode
@@ -35,6 +37,7 @@ class SupplyNodeSerializer(serializers.ModelSerializer):
 
 
 class SupplyNodeUpdateSerializer(serializers.ModelSerializer):
+    validators = [SupplyNodeValidator(),]
 
     class Meta:
         model = SupplyNode

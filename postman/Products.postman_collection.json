@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "3ef5d76b-7621-4f1a-9a9d-f259fdc843e7",
+		"name": "Products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28417044"
+	},
+	"item": [
+		{
+			"name": "Products List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwNDI3MjYwLCJpYXQiOjE3MTA0MjM2NjAsImp0aSI6IjIyM2FkYjExMzBlNjRiZDBhOWIxMjNlZjMyZjA0ZTRjIiwidXNlcl9pZCI6MX0.f6EbyK2yIHXKczQ5_6zu0LKI-8jInrj7ObzSOQHeBaw",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/product/"
+			},
+			"response": []
+		},
+		{
+			"name": "Product Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwNDI3MjYwLCJpYXQiOjE3MTA0MjM2NjAsImp0aSI6IjIyM2FkYjExMzBlNjRiZDBhOWIxMjNlZjMyZjA0ZTRjIiwidXNlcl9pZCI6MX0.f6EbyK2yIHXKczQ5_6zu0LKI-8jInrj7ObzSOQHeBaw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"iPad Pro111\",\n    \"model\": \"A2764\",\n    \"launch_date\": \"2022-10-18\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/product/"
+			},
+			"response": []
+		},
+		{
+			"name": "Product Retrieve",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwNDI3MjYwLCJpYXQiOjE3MTA0MjM2NjAsImp0aSI6IjIyM2FkYjExMzBlNjRiZDBhOWIxMjNlZjMyZjA0ZTRjIiwidXNlcl9pZCI6MX0.f6EbyK2yIHXKczQ5_6zu0LKI-8jInrj7ObzSOQHeBaw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/product/3/"
+			},
+			"response": []
+		},
+		{
+			"name": "Product Update",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwNDA4NDM5LCJpYXQiOjE3MTA0MDQ4MzksImp0aSI6ImIwZWY2OTFiZmE4NzQxOWJhNDNkYTMzNzUxNmU2OWQ5IiwidXNlcl9pZCI6MX0.mfc7pXP5ZXWCc1lt0zLnXI2U4CBJ-8ikk_SYlZ7Wkqg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"launch_date\": \"2023-09-22\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/product/2/"
+			},
+			"response": []
+		},
+		{
+			"name": "Product Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEwNDI3MjYwLCJpYXQiOjE3MTA0MjM2NjAsImp0aSI6IjIyM2FkYjExMzBlNjRiZDBhOWIxMjNlZjMyZjA0ZTRjIiwidXNlcl9pZCI6MX0.f6EbyK2yIHXKczQ5_6zu0LKI-8jInrj7ObzSOQHeBaw",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/product/9/"
+			},
+			"response": []
+		}
+	]
+}
