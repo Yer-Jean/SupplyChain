@@ -27,26 +27,24 @@ class ContactListDetailSerializer(serializers.ModelSerializer):
         return obj.supply_node.name if obj.supply_node else None
 
 
-# class ContactListSerializer(serializers.ModelSerializer):
-#     supply_node_addresses = serializers.SerializerMethodField()
-#     supply_node_name = serializers.CharField(source='supply_node.name', read_only=True)
-#
-#     class Meta:
-#         model = Contact
-#         fields = ('supply_node_name', 'supply_node_addresses',)
-#
-#     def get_supply_node_addresses(self, supply_node):
-#         return ContactSerializer(Contact.objects.filter(id=supply_node.id), many=True).data
-#
-#     def get_supply_node_name(self, obj):
-#         return obj.supply_node.name
-
-
 class SupplyNodeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SupplyNode
         fields = '__all__'
+
+
+class SupplyNodeUpdateSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = SupplyNode
+        fields = '__all__'
+
+    def validate(self, attrs):
+        # Проверяем, что поле debt не было включено в данные запроса
+        if 'debt' in attrs:
+            raise serializers.ValidationError("Обновление поля 'Задолженность' запрещено.")
+        return attrs
 
 
 class SupplyNodeListViewSerializer(serializers.ModelSerializer):
@@ -56,7 +54,7 @@ class SupplyNodeListViewSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SupplyNode
-        fields = ('name', 'category', 'supplier_tier', 'debt', 'tier', 'addresses', 'products',)
+        fields = ('id', 'name', 'category', 'supplier_tier', 'debt', 'tier', 'addresses', 'products',)
 
     def get_addresses(self, obj):
         contacts = obj.contact_set.all()

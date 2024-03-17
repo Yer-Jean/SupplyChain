@@ -1,10 +1,10 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, serializers
 from rest_framework.generics import CreateAPIView, UpdateAPIView, RetrieveAPIView, ListAPIView, DestroyAPIView
 
 from main.models import Product, SupplyNode, Contact
 from main.permissions import IsActive
 from main.serializers import ProductSerializer, SupplyNodeSerializer, ContactSerializer, ContactListDetailSerializer, \
-    SupplyNodeListViewSerializer
+    SupplyNodeListViewSerializer, SupplyNodeUpdateSerializer
 
 
 class ProductViewSet(viewsets.ModelViewSet):
@@ -47,7 +47,7 @@ class SupplyNodeListAPIView(ListAPIView):
 
 
 class SupplyNodeUpdateAPIView(UpdateAPIView):
-    serializer_class = SupplyNodeSerializer
+    serializer_class = SupplyNodeUpdateSerializer
     queryset = SupplyNode.objects.all()
     permission_classes = [IsActive]
 
